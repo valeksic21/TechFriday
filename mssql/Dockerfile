@@ -30,7 +30,7 @@ ARG TCP_PORT=1433
 ARG PID=Developer
 ENV ACCEPT_EULA=Y MSSQL_PID=$PID MSSQL_SA_PASSWORD=$SA_PASSWORD MSSQL_TCP_PORT=$TCP_PORT
 
-# Install latest mssql-server package
+# Install latest mssql-server package .
 # You don't have to register subscription if you build docker image on registered RHEL machine.
 # If you build on other machines, please fill in Red Hat subscription name and password and uncomment the below command.
 RUN subscription-manager register --username valeksic28 --password Eugen28$ --auto-attach
