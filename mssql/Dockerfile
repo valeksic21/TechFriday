@@ -33,8 +33,8 @@ ENV ACCEPT_EULA=Y MSSQL_PID=$PID MSSQL_SA_PASSWORD=$SA_PASSWORD MSSQL_TCP_PORT=$
 # Install latest mssql-server package
 # You don't have to register subscription if you build docker image on registered RHEL machine.
 # If you build on other machines, please fill in Red Hat subscription name and password and uncomment the below command.
-#RUN subscription-manager register --username <your_username> --password <your_password> --auto-attach
-#RUN yum install -y curl
+RUN subscription-manager register --username <your_username> --password <your_password> --auto-attach
+RUN yum install -y curl
 RUN REPOLIST=rhel-7-server-rpms,packages-microsoft-com-mssql-server-2017,packages-microsoft-com-prod && \
     curl -o /etc/yum.repos.d/mssql-server.repo https://packages.microsoft.com/config/rhel/7/mssql-server-2017.repo && \
     curl -o /etc/yum.repos.d/msprod.repo https://packages.microsoft.com/config/rhel/7/prod.repo && \
